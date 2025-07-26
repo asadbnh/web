@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - زجاج سكريت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'glass-blue': '#e0f2fe',
+                        'glass-dark': '#0891b2',
+                        'glass-light': '#f0f9ff',
+                        'glass-accent': '#0284c7'
+                    },
+                    fontFamily: {
+                        'arabic': ['Tajawal', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+    </style>
+</head>
+
+<body class="font-arabic bg-gradient-to-br from-glass-light via-white to-glass-blue min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-glass-dark text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">لوحة التحكم - زجاج سكريت</h1>
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="{{ url_for('index') }}" class="bg-white text-glass-dark px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        عرض الموقع
+                    </a>
+                    <a href="{{ url_for('logout') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                        تسجيل الخروج
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Statistics Cards -->
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+            <div class="glass-card p-6 rounded-xl text-center">
+                <div class="text-3xl font-bold text-glass-dark mb-2">{{ projects|length }}</div>
+                <div class="text-gray-600">إجمالي المشاريع</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center">
+                <div class="text-3xl font-bold text-green-600 mb-2">{{ total_visitors }}</div>
+                <div class="text-gray-600">إجمالي الزوار</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center">
+                <div class="text-3xl font-bold text-blue-600 mb-2">{{ today_visitors }}</div>
+                <div class="text-gray-600">زوار اليوم</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center">
+                <div class="text-3xl font-bold text-blue-600 mb-2">
+                    {% set total_images = 0 %}
+                    {% for project in projects %}
+                        {% set total_images = total_images + project.images|length %}
+                    {% endfor %}
+                    {{ total_images }}
+                </div>
+                <div class="text-gray-600">إجمالي الصور</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl text-center">
+                <div class="text-3xl font-bold text-purple-600 mb-2">100%</div>
+                <div class="text-gray-600">معدل الرضا</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-4 mb-8">
+            <a href="{{ url_for('add_project') }}" 
+               class="bg-glass-accent text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 space-x-reverse">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/>
+                </svg>
+                <span>إضافة مشروع جديد</span>
+            </a>
+            
+            <a href="{{ url_for('upload_images') }}" 
+               class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2 space-x-reverse">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                </svg>
+                <span>رفع صور لمشروع موجود</span>
+            </a>
+        </div>
+
+        <!-- Projects List -->
+        <div class="glass-card rounded-xl overflow-hidden">
+            <div class="bg-glass-dark text-white p-6">
+                <h2 class="text-xl font-bold">قائمة المشاريع</h2>
+            </div>
+            
+            {% if projects %}
+                <div class="divide-y divide-gray-200">
+                    {% for project in projects %}
+                        <div class="p-6 hover:bg-gray-50 transition-colors">
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold text-glass-dark mb-2">{{ project.title }}</h3>
+                                    <p class="text-gray-600 mb-4">{{ project.description }}</p>
+                                    
+                                    {% if project.images %}
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            {% for image in project.images[:3] %}
+                                                <img src="{{ image.image_url }}" alt="{{ project.title }}" 
+                                                     class="w-16 h-16 object-cover rounded-lg border-2 border-gray-200">
+                                            {% endfor %}
+                                            {% if project.images|length > 3 %}
+                                                <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm">
+                                                    +{{ project.images|length - 3 }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="text-sm text-gray-500">
+                                            عدد الصور: {{ project.images|length }}
+                                        </div>
+                                    {% else %}
+                                        <div class="text-sm text-gray-500">لا توجد صور</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="flex space-x-2 space-x-reverse">
+                                    <form method="POST" action="{{ url_for('delete_project', project_id=project.id) }}" 
+                                          onsubmit="return confirm('هل أنت متأكد من حذف هذا المشروع؟')" class="inline">
+                                        <button type="submit" 
+                                                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors flex items-center space-x-1 space-x-reverse">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414L7.586 12l-1.293 1.293a1 1 0 101.414 1.414L9 13.414l2.293 2.293a1 1 0 001.414-1.414L11.414 12l1.293-1.293z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span>حذف</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="p-12 text-center">
+                    <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-600 mb-2">لا توجد مشاريع</h3>
+                    <p class="text-gray-500 mb-4">ابدأ بإضافة مشروعك الأول</p>
+                    <a href="{{ url_for('add_project') }}" 
+                       class="bg-glass-accent text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        إضافة مشروع جديد
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // Real-time updates can be added here if needed
+        console.log('Admin panel loaded successfully');
+    </script>
+</body>
+</html>
+

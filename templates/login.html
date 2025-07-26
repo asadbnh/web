@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - زجاج سكريت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'glass-blue': '#e0f2fe',
+                        'glass-dark': '#0891b2',
+                        'glass-light': '#f0f9ff',
+                        'glass-accent': '#0284c7'
+                    },
+                    fontFamily: {
+                        'arabic': ['Tajawal', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0891b2 0%, #0284c7 50%, #0369a1 100%);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+
+<body class="font-arabic hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full floating-animation"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 bg-white opacity-5 rounded-full floating-animation" style="animation-delay: -2s;"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white opacity-5 rounded-full floating-animation" style="animation-delay: -4s;"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-md mx-auto">
+            <!-- Logo and Title -->
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                    <svg class="w-10 h-10 text-glass-dark" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z"/>
+                    </svg>
+                </div>
+                <h1 class="text-3xl font-bold text-white mb-2">زجاج سكريت</h1>
+                <p class="text-glass-blue">لوحة التحكم الإدارية</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="glass-card rounded-2xl p-8">
+                <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">تسجيل الدخول</h2>
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="mb-4 p-4 rounded-lg bg-red-100 text-red-700 border border-red-300">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <form method="POST" id="loginForm">
+                    {{ form.hidden_tag() }}
+                    
+                    <!-- Username Field -->
+                    <div class="mb-6">
+                        {{ form.username.label(class="block text-sm font-bold text-gray-700 mb-2") }}
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                                </svg>
+                            </div>
+                            {{ form.username(class="w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-glass-accent focus:border-transparent transition-colors", placeholder="اسم المستخدم") }}
+                        </div>
+                        {% if form.username.errors %}
+                            <div class="mt-2 text-red-600 text-sm">
+                                {% for error in form.username.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="mb-6">
+                        {{ form.password.label(class="block text-sm font-bold text-gray-700 mb-2") }}
+                        <div class="relative">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2z"/>
+                                </svg>
+                            </div>
+                            {{ form.password(class="w-full pl-4 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-glass-accent focus:border-transparent transition-colors", placeholder="كلمة المرور") }}
+                        </div>
+                        {% if form.password.errors %}
+                            <div class="mt-2 text-red-600 text-sm">
+                                {% for error in form.password.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="mb-6">
+                        {{ form.submit(class="w-full bg-glass-accent text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg") }}
+                    </div>
+                </form>
+
+                <!-- Back to Website Link -->
+                <div class="text-center">
+                    <a href="{{ url_for('index') }}" class="text-glass-accent hover:text-blue-700 transition-colors flex items-center justify-center space-x-2 space-x-reverse">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"/>
+                        </svg>
+                        <span>العودة للموقع الرئيسي</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-8 text-glass-blue">
+                <p class="text-sm">© 2024 زجاج سكريت. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form validation
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!username || !password) {
+                e.preventDefault();
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return false;
+            }
+
+            // Show loading state
+            const submitBtn = document.querySelector('input[type="submit"]');
+            submitBtn.value = 'جاري تسجيل الدخول...';
+            submitBtn.disabled = true;
+        });
+
+        // Auto-focus on username field
+        document.getElementById('username').focus();
+    </script>
+</body>
+</html>
+

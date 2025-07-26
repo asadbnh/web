@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>My Images</h1>
+    <a href="{{ url_for('login') }}">Admin Login</a>
+    <div class="images">
+        {% for image in images %}
+            <div class="image">
+                <img src="{{ image.image_url }}" alt="Project Image">
+                <a href="https://wa.me/?text=I%20saw%20your%20image%20and%20I%20have%20a%20question." target="_blank">Contact via WhatsApp</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

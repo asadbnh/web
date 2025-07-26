@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زجاج سكريت - واجهات زجاجية، مسابح، المنيوم، دربزين</title>
+<meta name="keywords" content="زجاج سكريت, سكريت, واجهات زجاجية, واجهات محلات, واجهات أرضي, واجهات أدوار, مسابح, المنيوم, دربزين, جودة العمل, دقة المواعيد">
+<meta name="description" content="زجاج سكريت في الرياض - الصناعية القديمة. نقدم واجهات محلات وأرضي وأدوار، زجاج سكريت للمسابح، أعمال المنيوم ودربزين بجودة عالية ودقة في المواعيد.">
+<meta property="og:title" content="زجاج سكريت - واجهات زجاجية، مسابح، المنيوم، دربزين">
+<meta property="og:description" content="زجاج سكريت في الرياض - الصناعية القديمة. نقدم واجهات محلات وأرضي وأدوار، زجاج سكريت للمسابح، أعمال المنيوم ودربزين بجودة عالية ودقة في المواعيد.">
+<meta property="og:image" content="{{ url_for('static', filename='imgei/icon.png') }}">
+<meta name="twitter:title" content="زجاج سكريت - واجهات زجاجية، مسابح، المنيوم، دربزين">
+<meta name="twitter:description" content="زجاج سكريت في الرياض - الصناعية القديمة. نقدم واجهات محلات وأرضي وأدوار، زجاج سكريت للمسابح، أعمال المنيوم ودربزين بجودة عالية ودقة في المواعيد.">
+<meta name="twitter:image" content="{{ url_for('static', filename='imgei/icon.png') }}">
+<link rel="icon" href="{{ url_for('static', filename='imgei/icon.png') }}" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'glass-blue': '#e0f2fe',
+                        'glass-dark': '#0891b2',
+                        'glass-light': '#f0f9ff',
+                        'glass-accent': '#0284c7'
+                    },
+                    fontFamily: {
+                        'arabic': ['Tajawal', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for glass effects -->
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0891b2 0%, #0284c7 50%, #0369a1 100%);
+        }
+        
+        .image-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .image-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWRZBLLDRH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QWRZBLLDRH');
+    </script>
+</head>
+
+<body class="font-arabic bg-gradient-to-br from-glass-light via-white to-glass-blue min-h-screen">
+    <!-- Navigation Header -->
+    <nav class="glass-effect fixed top-0 w-full z-50 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <img src="{{ url_for('static', filename='imgei/icon.png') }}" alt="شعار الشركة" class="w-12 h-12 rounded-full border-2 border-white shadow-lg">
+               <div>
+    <h1 class="text-xl font-bold text-black">زجاج سكريت</h1>
+    <p class="text-sm text-black">الرياض - الصناعية القديمة</p>
+</div>
+
+            </div>
+            
+            <!-- Social Media Icons -->
+           <div class="flex space-x-3 space-x-reverse">
+
+  <!-- فيسبوك -->
+  <a href="https://www.facebook.com/share/yTLAULhMSFiKvfd2/" target="_blank" 
+     class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+    <i class="fab fa-facebook-f text-white text-lg"></i>
+  </a>
+
+  <!-- واتساب -->
+  <a href="https://wa.me/+966578671095" target="_blank" 
+     class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+    <i class="fab fa-whatsapp text-white text-lg"></i>
+  </a>
+
+  <!-- الاتصال -->
+  <a href="tel:+966578671095" 
+     class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+    <i class="fas fa-phone text-white text-lg"></i>
+  </a>
+
+  <!-- سناب شات -->
+  <a href="https://www.snapchat.com/add/tqyldynbnh24?share_id=7d-FMZFO2wU&locale=ar-AE" target="_blank" 
+     class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors">
+    <i class="fab fa-snapchat-ghost text-white text-lg"></i>
+  </a>
+
+</div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 floating-animation">
+                 زجاج سكريت
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 leading-relaxed fade-in">
+                    لجميع أعمال الزجاج السكريت • واجهات محلات • واجهات أرضي • واجهات أدوار • مسابح • المنيوم • دربزين
+                </p>
+                <div class="glass-card inline-block px-8 py-4 rounded-full">
+                    <p class="text-lg font-semibold">شعارنا: الجودة في العمل والدقة في المواعيد</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full floating-animation"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-white opacity-5 rounded-full floating-animation" style="animation-delay: -2s;"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-glass-dark mb-12">خدماتنا المتميزة</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-glass-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-glass-dark mb-2">واجهات زجاجية</h3>
+                    <p class="text-gray-600">واجهات محلات وأرضي وأدوار بأحدث التقنيات</p>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-glass-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-glass-dark mb-2">مسابح وألمنيوم</h3>
+                    <p class="text-gray-600">تصميم وتنفيذ مسابح وأعمال الألمنيوم</p>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-glass-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-glass-dark mb-2">دربزين وتشطيبات</h3>
+                    <p class="text-gray-600">دربزين زجاجي وتشطيبات عالية الجودة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section class="py-16 bg-gradient-to-br from-glass-light to-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-glass-dark mb-12">معرض أعمالنا</h2>
+            
+            {% if projects %}
+                <div class="space-y-16">
+                    {% for project in projects %}
+                        <article class="glass-card p-8 rounded-2xl fade-in">
+                            <div class="text-center mb-8">
+                                <h3 class="text-3xl font-bold text-glass-dark mb-4">{{ project.title }}</h3>
+                                <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">{{ project.description }}</p>
+                            </div>
+                            
+                            {% if project.images %}
+                                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {% for image in project.images %}
+                                        <div class="relative overflow-hidden rounded-xl shadow-lg image-hover cursor-pointer" onclick="openModal('{{ image.image_url }}')">
+                                            <img src="{{ image.image_url }}" alt="{{ project.title }}" 
+                                                 class="w-full h-64 object-cover">
+                                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                                <p class="text-white p-4 font-semibold">{{ project.title }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="text-center py-16">
+                    <div class="glass-card p-12 rounded-2xl max-w-md mx-auto">
+                        <svg class="w-16 h-16 text-glass-accent mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-glass-dark mb-2">قريباً</h3>
+                        <p class="text-gray-600">سيتم إضافة معرض الأعمال قريباً</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 hero-gradient text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">تواصل معنا</h2>
+            <p class="text-xl mb-8">للحصول على استشارة مجانية وعرض أسعار</p>
+            
+         <div class="flex flex-wrap justify-center gap-6 mb-8">
+
+  <!-- واتساب -->
+  <a href="https://wa.me/+966578671095" target="_blank" 
+     class="glass-card px-8 py-4 rounded-full hover:transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 space-x-reverse">
+    <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+    <span class="font-semibold">واتساب: 966578671095+</span>
+  </a>
+
+  <!-- هاتف -->
+  <a href="tel:+966578671095" 
+     class="glass-card px-8 py-4 rounded-full hover:transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 space-x-reverse">
+    <i class="fas fa-phone-alt text-blue-900
+ text-xl"></i>
+    <span class="font-semibold">هاتف: 966578671095+</span>
+  </a>
+
+</div>
+
+            
+            <div class="glass-card inline-block px-6 py-3 rounded-full">
+                <p class="text-lg">📍 الرياض - الصناعية القديمة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-right">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">زجاج سكريت</h3>
+                    <p class="text-gray-400">شركة متخصصة في جميع أعمال الزجاج والألمنيوم</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">خدماتنا</h3>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>واجهات زجاجية</li>
+                        <li>مسابح وألمنيوم</li>
+                        <li>دربزين وتشطيبات</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">تابعنا</h3>
+                   <div class="flex justify-center md:justify-start space-x-4 space-x-reverse">
+
+  <!-- فيسبوك -->
+  <a href="https://www.facebook.com/share/yTLAULhMSFiKvfd2/" target="_blank" 
+     class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+    <i class="fab fa-facebook-f text-white text-base"></i>
+  </a>
+
+  <!-- واتساب -->
+  <a href="https://wa.me/+966578671095" target="_blank" 
+     class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+    <i class="fab fa-whatsapp text-white text-base"></i>
+  </a>
+
+  <!-- سناب شات -->
+  <a href="https://www.snapchat.com/add/tqyldynbnh24?share_id=7d-FMZFO2wU&locale=ar-AE" target="_blank" 
+     class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors">
+    <i class="fab fa-snapchat-ghost text-white text-base"></i>
+  </a>
+
+</div>
+
+                </div>
+            </div>
+            
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center" dir="rtl">
+  <p class="text-gray-400 mb-2">
+    ‎© 2025‬ زجاج سكريت. جميع الحقوق محفوظة.
+  </p>
+    <p class="text-sm text-gray-500">
+    برمجة وتصميم: أسد بنه |
+    <a href="https://wa.me/+967735103418" target="_blank" class="text-glass-accent hover:underline">للتواصل اضغط هنا</a>
+  </p>
+</div>
+
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-4xl max-h-full">
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-colors">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white', 'shadow-lg');
+                nav.classList.remove('glass-effect');
+            } else {
+                nav.classList.remove('bg-white', 'shadow-lg');
+                nav.classList.add('glass-effect');
+            }
+        });
+    </script>
+</body>
+</html>
+

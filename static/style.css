@@ -1,0 +1,128 @@
+
+/* تنسيق الهيدر */
+.header {
+    background-color: #0ec7ff; /* لون خلفية الهيدر */
+    text-align: center; /* محاذاة النص إلى المنتصف */
+}
+h1 {
+    font-size: 2.5em; /* حجم خط العنوان */
+    color: #000000; /* لون النص */
+}
+
+.rr {
+    font-size: 1.2em; /* حجم خط النص الفرعي */
+    color: #050202; /* لون النص الفرعي */
+    margin: 10px 0; /* هوامش فوق وتحت */
+}
+
+.rre {
+    font-size: 2.5em; /* حجم خط نص إضافي */
+    color: #000000; /* لون النص */
+    margin: 20px ; /* هوامش فوق وتحت */
+}
+.bag{
+  text-align: center;  
+  font-weight: bold;
+}
+.bag1{
+    font-weight: bold; 
+    font-size: 1.2em; 
+}
+.header-right:hover{
+    background-color: rgb(255, 187, 127);
+}
+
+.header-right a {
+    margin-left: 10px; /* إضافة مسافة من اليسار */
+}
+
+.header-right img {
+    width: 40px; /* عرض الأيقونات */
+    height: 40px; /* ارتفاع الأيقونات */
+    transition: transform 0.3s; /* تأثير التحول عند التمرير */
+}
+
+.header-right img:hover {
+    transform: rotate(360deg); /* دوران الأيقونات عند التمرير */
+}
+
+/* استجابة لأحجام الشاشات الصغيرة */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* تقليل حجم خط العنوان */
+    }
+
+    .rr, .rre {
+        font-size: 1em; /* تقليل حجم النصوص الفرعية */
+    }
+
+    .header-right img {
+        width: 30px; /* تقليل عرض الأيقونات */
+        height: 30px; /* تقليل ارتفاع الأيقونات */
+    }
+}
+
+/* المحتوى الرئيسي */
+.content div {
+  font-size: 2em; 
+}
+
+.fullscreen-image {
+    width: 80%; /* عرض الصورة */
+    object-fit: cover; /* تغطية الصورة للمساحة المتاحة */  
+}
+
+/* المشاريع */
+.projects {
+    display: flex; /* استخدام نظام الفليكس لترتيب المشاريع */
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    align-items: center; /* محاذاة العناصر في المنتصف */
+}
+
+.project {
+
+    background-color: #9edbee;
+    margin: 50px ; /* هوامش فوق وتحت */
+    padding: 15px; /* إضافة حشوة داخلية */
+    border-radius: 40px; /* زوايا دائرية */
+    width: 80%; /* عرض المشروع */
+    transition: transform 0.3s ease;
+}
+
+.project img {
+    width: 100%; /* عرض الصورة داخل المشروع */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    margin-top: 10px; /* إضافة مسافة من الأعلى */
+}
+
+/* أيقونات وسائل التواصل الاجتماعي */
+.social-icons {
+    background-color: rgb(226, 223, 223); /* خلفية شفافة */
+    color: #150707; /* لون الأيقونات */
+    text-align: center; /* محاذاة النص إلى المنتصف */
+   
+}
+
+.social-icons img {
+    width: 24px; /* عرض أيقونات وسائل التواصل */
+    height: 24px; /* ارتفاع أيقونات وسائل التواصل */
+    transition: transform 0.3s ; /* تأثير التحول عند التمرير */
+    margin: 10px; /* إضافة مسافة بين الأيقونات */
+}
+
+.social-icons img:hover {
+    transform: rotate(360deg); /* دوران الأيقونات عند التمرير */
+}
+
+
+.intro-text {
+    margin: 20px ; /* هوامش فوق وتحت */
+    text-align: center; /* محاذاة النص إلى المنتصف */
+    font-size: 2em; /* حجم خط النص */
+    font-weight: bold; /* جعل النص عريض */
+}
+
+.small-text {
+    color: #000000; /* لون النص */
+    font-size: 3em; /* حجم خط كبير للنص */
+}
