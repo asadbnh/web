@@ -1,22 +1,18 @@
-<a href="https://glass77.pythonanywhere.com/" target="_blank" style="text-decoration:none; color:inherit;">
-  <h2>Glass Skrit | Glass Facades, Railings, Pools & Aluminum Works – Riyadh</h2>
+# Glass Skrit | Glass Facades, Railings, Pools & Aluminum Works – Riyadh
 
-  <p>Welcome to <strong>Glass Skrit</strong>, your trusted partner in modern glass solutions and architectural finishes in <strong>Riyadh – Old Industrial Area</strong>.</p>
+Welcome to **Glass Skrit**, your trusted partner in modern glass solutions and architectural finishes in **Riyadh – Old Industrial Area**.
+https://glass77.pythonanywhere.com/
+We specialize in high-quality, custom glass work, including:
 
-  <p>We specialize in high-quality, custom glass work, including:</p>
+- Glass facades for buildings and commercial stores  
+- Tempered (Skrit) glass installations  
+- Glass & aluminum railings for homes, stairs, and balconies  
+- Custom glass for swimming pools and office partitions  
+- Ground floor and multi-floor front installations
 
-  <ul>
-    <li>Glass facades for buildings and commercial stores</li>
-    <li>Tempered (Skrit) glass installations</li>
-    <li>Glass & aluminum railings for homes, stairs, and balconies</li>
-    <li>Custom glass for swimming pools and office partitions</li>
-    <li>Ground floor and multi-floor front installations</li>
-  </ul>
+🎯 **Our motto: Precision in execution, excellence in quality.**  
+💼 Serving individuals, businesses, and construction projects.
 
-  <p>🎯 <strong>Our motto:</strong> Precision in execution, excellence in quality.</p>
-  <p>💼 Serving individuals, businesses, and construction projects.</p>
-
-  <p>📞 <strong>Contact us for a free site inspection:</strong><br>
-  Phone / WhatsApp: +967735103418<br>
-  📍 Location: Riyadh – Old Industrial Zone</p>
-</a>
+📞 **Contact us for a free site inspection:**  
+Phone / WhatsApp: +967735103418
+📍 Location: Riyadh – Old Industrial Zone
